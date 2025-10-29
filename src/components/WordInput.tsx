@@ -4,10 +4,9 @@ import styles from './WordInput.module.css';
 interface WordInputProps {
   onSubmit: (input: string) => void;
   isCorrect: boolean | null;
-  correctAnswer: string;
 }
 
-export function WordInput({ onSubmit, isCorrect, correctAnswer }: WordInputProps) {
+export function WordInput({ onSubmit, isCorrect }: WordInputProps) {
   const [input, setInput] = useState('');
 
   const handleSubmit = (e: FormEvent) => {

@@ -9,7 +9,6 @@ function App() {
   const [currentWord, setCurrentWord] = useState<string>('');
   const [numbers, setNumbers] = useState<number[]>([]);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [correctAnswer, setCorrectAnswer] = useState<string>('');
 
   useEffect(() => {
     const word = getRandomWord(WORDS);
@@ -20,13 +19,11 @@ function App() {
   const handleSubmit = (input: string) => {
     if (input === currentWord) {
       setIsCorrect(true);
-      setCorrectAnswer(currentWord);
       const newWord = getRandomWord(WORDS, currentWord);
       setCurrentWord(newWord);
       setNumbers(wordToNumbers(newWord));
       setTimeout(() => {
         setIsCorrect(null);
-        setCorrectAnswer('');
       }, 1000);
     } else {
       setIsCorrect(false);
@@ -45,7 +42,7 @@ function App() {
 
       <div className={styles.content}>
         <NumberDisplay numbers={numbers} />
-        <WordInput onSubmit={handleSubmit} isCorrect={isCorrect} correctAnswer={correctAnswer} />
+        <WordInput onSubmit={handleSubmit} isCorrect={isCorrect} />
       </div>
     </div>
   );
