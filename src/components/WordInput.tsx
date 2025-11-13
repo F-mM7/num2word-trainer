@@ -4,9 +4,14 @@ import styles from './WordInput.module.css';
 interface WordInputProps {
   onSubmit: (input: string) => void;
   isCorrect: boolean | null;
+  placeholder?: string;
 }
 
-export function WordInput({ onSubmit, isCorrect }: WordInputProps) {
+export function WordInput({
+  onSubmit,
+  isCorrect,
+  placeholder = '英単語を入力してください',
+}: WordInputProps) {
   const [input, setInput] = useState('');
 
   const handleSubmit = (e: FormEvent) => {
@@ -26,7 +31,7 @@ export function WordInput({ onSubmit, isCorrect }: WordInputProps) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className={styles.input}
-          placeholder="英単語を入力してください"
+          placeholder={placeholder}
           autoFocus
         />
         <button type="submit" className={styles.button}>

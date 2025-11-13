@@ -1,1 +1,1 @@
-{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/NumberDisplay.tsx","./src/components/WordInput.tsx","./src/data/words.ts","./src/utils/wordUtils.ts"],"version":"5.8.3"}
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/ModeToggle.tsx","./src/components/NumberDisplay.tsx","./src/components/WordInput.tsx","./src/data/hiragana.ts","./src/data/japaneseWords.ts","./src/data/words.ts","./src/utils/hiraganaUtils.ts","./src/utils/wordUtils.ts"],"version":"5.8.3"}

@@ -1,7 +1,7 @@
 import styles from './NumberDisplay.module.css';
 
 interface NumberDisplayProps {
-  numbers: number[];
+  numbers: (number | null)[];
 }
 
 export function NumberDisplay({ numbers }: NumberDisplayProps) {
@@ -10,7 +10,7 @@ export function NumberDisplay({ numbers }: NumberDisplayProps) {
       <div className={styles.numbers}>
         {numbers.map((num, index) => (
           <span key={index} className={styles.number}>
-            {num}
+            {num !== null ? num : '?'}
           </span>
         ))}
       </div>
